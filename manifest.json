@@ -13,6 +13,8 @@
     }
   ],
 
+  "web_accessible_resources": ["resources/download.jpg"],
+
   "background": {
     "scripts": ["background.js"]
   },
