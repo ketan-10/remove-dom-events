@@ -1,21 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Traversy Media Quick Launcher</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
+    <title>Chrome Events Remover</title>
     <style>
-      /* Modal Structure */
-
       html,
       body {
         font-family: "Open Sans", sans-serif;
@@ -34,17 +21,6 @@
         color: #2f5876;
       }
 
-      a:link,
-      a:visited {
-        color: #000000;
-        outline: 0;
-        text-decoration: none;
-      }
-
-      img {
-        width: 30px;
-      }
-
       .modal-header {
         align-items: center;
         border-bottom: 0.5px solid #dadada;
@@ -54,88 +30,47 @@
         padding: 0 22px;
       }
 
-      .modal-icons {
-        border-top: 0.5px solid #dadada;
-        height: 50px;
-        width: 100%;
-      }
-
-      .logo {
-        padding: 16px;
-      }
-
-      .logo-icon {
-        vertical-align: text-bottom;
-        margin-right: 12px;
-      }
-
       .version {
         color: #444;
         font-size: 18px;
       }
-
-      .flex-container {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 22px;
-      }
-
-      .flex {
-        opacity: 1;
-        transition: opacity 0.2s ease-in-out;
-        width: 120px;
-      }
-
-      .flex:hover {
-        opacity: 0.4;
-      }
-
-      .flex .fa {
-        font-size: 40px;
-        color: #2f5876;
-      }
     </style>
-    <script src="popup.js"></script>
   </head>
 
   <body>
     <div class="modal-header">
       <h1 class="logo">
-        <img class="logo-icon" src="images/logo-big.png" />Traversy Launcher
-        <span class="version">(1.0.0)</span>
+        Chrome Events Remover
+        <span class="version">(0.0.1)</span>
       </h1>
     </div>
     <div class="modal-content">
-      <p>Easily Access Traversy Media content</p>
+      <p>Remove any chorme Event</p>
     </div>
-    <div class="modal-icons">
-      <div class="flex-container">
-        <div class="flex">
-          <a href="https://www.traversymedia.com" target="_blank">
-            <i class="fa fa-globe" style="color: darksalmon;"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="https://www.youtube.com/traversymedia" target="_blank">
-            <i class="fa fa-youtube" style="color: darksalmon;"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="https://www.twitter.com/traversymedia" target="_blank">
-            <i class="fa fa-twitter" style="color: darksalmon;"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="https://www.facebook.com/traversymedia" target="_blank">
-            <i class="fa fa-facebook" style="color: darksalmon;"></i>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="https://www.github.com/bradtraversy" target="_blank">
-            <i class="fa fa-github" style="color: darksalmon;"></i>
-          </a>
-        </div>
-      </div>
+    <div>
+      <ul id="eventsUL">
+        <li><input type="checkbox" class="events" name="event" id="change" value="change"> change </li>
+        <li><input type="checkbox" class="events" name="event" id="click" value="click"> click </li>
+        <li><input type="checkbox" class="events" name="event" id="mouseover" value="mouseover"> mouseover </li>
+        <li><input type="checkbox" class="events" name="event" id="mouseout" value="mouseout"> mouseout </li>
+        <li><input type="checkbox" class="events" name="event" id="keydown" value="keydown"> keydown </li>
+        <li><input type="checkbox" class="events" name="event" id="load" value="load"> load </li>
+        <li><input type="checkbox" class="events" name="event" id="blur" value="blur"> blur </li>
+        <li><input type="checkbox" class="events" name="event" id="focus" value="focus"> focus </li>
+        <li><input type="checkbox" class="events" name="event" id="select" value="select"> select </li>
+        <li><input type="checkbox" class="events" name="event" id="submit" value="submit"> submit </li>
+        <li><input type="checkbox" class="events" name="event" id="reset" value="reset"> reset </li>
+        <li><input type="checkbox" class="events" name="event" id="keypress" value="keypress"> keypress </li>
+        <li><input type="checkbox" class="events" name="event" id="keyup" value="keyup"> keyup </li>
+        <li><input type="checkbox" class="events" name="event" id="mousedown" value="mousedown"> mousedown </li>
+        <li><input type="checkbox" class="events" name="event" id="mouseup" value="mouseup"> mouseup </li>
+        <li><input type="checkbox" class="events" name="event" id="mousemove" value="mousemove"> mousemove </li>
+        <li><input type="checkbox" class="events" name="event" id="dblclick" value="dblclick"> dblclick </li>
+        <li><input type="checkbox" class="events" name="event" id="error" value="error"> error </li>
+        <li><input type="checkbox" class="events" name="event" id="unload" value="unload"> unload </li>
+        <li><input type="checkbox" class="events" name="event" id="resize" value="resize"> resize </li>
+      </ul>
     </div>
+    <script src="./popup.js"></script>
   </body>
 </html>
