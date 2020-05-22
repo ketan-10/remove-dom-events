@@ -4,3 +4,7 @@
  */
 
 console.log("hello ketan");
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponce) => {
+  console.log(request.txt);
+});

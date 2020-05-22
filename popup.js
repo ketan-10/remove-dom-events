@@ -6,4 +6,6 @@
  * THIS SCRIPT CAN ONLY MANUPLATE POPUP CONTENT 
  */
 
- console.log("popup.js running here")
+console.log("popup.js running here");
+
+//console.log(document);
