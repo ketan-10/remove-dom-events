@@ -2,63 +2,33 @@
  * Content.js runs on actual site
  * When all site is loaded content.js runs
  */
+// TODO : load local remove all events in local
 
-let all_events = {
-  change: false,
-  click: false,
-  mouseover: false,
-  mouseout: false,
-  keydown: false,
-  load: false,
-  blur: false,
-  focus: false,
-  select: false,
-  submit: false,
-  reset: false,
-  keypress: false,
-  keyup: false,
-  mousedown: false,
-  mouseup: false,
-  mousemove: false,
-  dblclick: false,
-  error: false,
-  unload: false,
-  resize: false,
-};
-
-function setStorage(events_values) {
-  console.log("first Time extenstion open");
-  chrome.storage.local.set({ events_tobe_removed: events_values }, function () {
-    console.log("Values are updated", events_values);
-  });
+function script(eve_names) {
+  for (let i of eve_names.split(",")) {
+    window[i] = () => {
+      console.log("your", i, "got replaced");
+    };
+  }
 }
 
-/** When background will send a message we will recive here */
-
-// TODO : load local remove all events in local
+function inject(fn, input) {
+  const script = document.createElement("script");
+  script.text = `(${fn.toString()})("${input.toString()}");`;
+  document.documentElement.appendChild(script);
+}
 
 chrome.storage.local.get(["events_tobe_removed"], function (result) {
   const res = result["events_tobe_removed"];
 
   if (res == undefined) {
-    setStorage(all_events);
+    console.log("You havent selected the events to cancel");
   } else {
-    console.log(res, typeof res);
+
+    const replace = [];
     for (const k in res) {
       if (res[k]) {
-        const doc_event = getEventListeners(document)[k];
-        if (doc_event) {
-          for (var i = 0; i < doc_event.length; i++) {
-            document.removeEventListener(k, doc_event[i].listener);
-          }
-        }
-
-        const wid_event = getEventListeners(window)[k];
-        if (wid_event) {
-          for (var i = 0; i < wid_event.length; i++) {
-            window.removeEventListener(k, wid_event[i].listener);
-          }
-        }
+        replace.push("on" + k);
 
         // remove for simple events;
         window.addEventListener(
@@ -70,5 +40,19 @@ chrome.storage.local.get(["events_tobe_removed"], function (result) {
         );
       }
     }
+
+    inject(script, replace);
   }
 });
+
+/*
+scripted : 
+
+k = "click"
+const doc_event = getEventListeners(window)[k];
+  if (doc_event) {
+    for (var i = 0; i < doc_event.length; i++) {
+      window.removeEventListener(k, doc_event[i].listener);
+    }
+  }
+*/

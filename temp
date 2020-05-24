@@ -1,26 +1,104 @@
-<li><input type="checkbox" name="event" class="events" id="onchange" value="onchange"> onchange </li>
-<li><input type="checkbox" name="event" class="events" id="onclick" value="onclick"> onclick </li>
-<li><input type="checkbox" name="event" class="events" id="onmouseover" value="onmouseover"> onmouseover </li>
-<li><input type="checkbox" name="event" class="events" id="onmouseout" value="onmouseout"> onmouseout </li>
-<li><input type="checkbox" name="event" class="events" id="onkeydown" value="onkeydown"> onkeydown </li>
-<li><input type="checkbox" name="event" class="events" id="onload" value="onload"> onload </li>
-<li><input type="checkbox" name="event" class="events" id="onblur" value="onblur"> onblur </li>
-<li><input type="checkbox" name="event" class="events" id="onchange" value="onchange"> onchange </li>
-<li><input type="checkbox" name="event" class="events" id="onfocus" value="onfocus"> onfocus </li>
-<li><input type="checkbox" name="event" class="events" id="onselect" value="onselect"> onselect </li>
-<li><input type="checkbox" name="event" class="events" id="onsubmit" value="onsubmit"> onsubmit </li>
-<li><input type="checkbox" name="event" class="events" id="onreset" value="onreset"> onreset </li>
-<li><input type="checkbox" name="event" class="events" id="onkeydown" value="onkeydown"> onkeydown </li>
-<li><input type="checkbox" name="event" class="events" id="onkeypress" value="onkeypress"> onkeypress </li>
-<li><input type="checkbox" name="event" class="events" id="onkeyup" value="onkeyup"> onkeyup </li>
-<li><input type="checkbox" name="event" class="events" id="onmouseover" value="onmouseover"> onmouseover </li>
-<li><input type="checkbox" name="event" class="events" id="onmouseout" value="onmouseout"> onmouseout </li>
-<li><input type="checkbox" name="event" class="events" id="onmousedown" value="onmousedown"> onmousedown </li>
-<li><input type="checkbox" name="event" class="events" id="onmouseup" value="onmouseup"> onmouseup </li>
-<li><input type="checkbox" name="event" class="events" id="onmousemove" value="onmousemove"> onmousemove </li>
-<li><input type="checkbox" name="event" class="events" id="onclick" value="onclick"> onclick </li>
-<li><input type="checkbox" name="event" class="events" id="ondblclick" value="ondblclick"> ondblclick </li>
-<li><input type="checkbox" name="event" class="events" id="onload" value="onload"> onload </li>
-<li><input type="checkbox" name="event" class="events" id="onerror" value="onerror"> onerror </li>
-<li><input type="checkbox" name="event" class="events" id="onunload" value="onunload"> onunload </li>
-<li><input type="checkbox" name="event" class="events" id="onresize" value="onresize"> onresize </li>
+onabort
+onafterprint
+onanimationend
+onanimationiteration
+onanimationstart
+onappinstalled
+onauxclick
+onbeforeinstallprompt
+onbeforeprint
+onbeforeunload
+onblur
+oncancel
+oncanplay
+oncanplaythrough
+onchange
+onclick
+onclose
+oncontextmenu
+oncuechange
+ondblclick
+ondevicemotion
+ondeviceorientation
+ondeviceorientationabsolute
+ondrag
+ondragend
+ondragenter
+ondragleave
+ondragover
+ondragstart
+ondrop
+ondurationchange
+onemptied
+onended
+onerror
+onfocus
+onformdata
+ongotpointercapture
+onhashchange
+oninput
+oninvalid
+onkeydown
+onkeypress
+onkeyup
+onlanguagechange
+onload
+onloadeddata
+onloadedmetadata
+onloadstart
+onlostpointercapture
+onmessage
+onmessageerror
+onmousedown
+onmouseenter
+onmouseleave
+onmousemove
+onmouseout
+onmouseover
+onmouseup
+onmousewheel
+onoffline
+ononline
+onpagehide
+onpageshow
+onpause
+onplay
+onplaying
+onpointercancel
+onpointerdown
+onpointerenter
+onpointerleave
+onpointermove
+onpointerout
+onpointerover
+onpointerrawupdate
+onpointerup
+onpopstate
+onprogress
+onratechange
+onrejectionhandled
+onreset
+onresize
+onscroll
+onsearch
+onseeked
+onseeking
+onselect
+onselectionchange
+onselectstart
+onstalled
+onstorage
+onsubmit
+onsuspend
+ontimeupdate
+ontoggle
+ontransitionend
+onunhandledrejection
+onunload
+onvolumechange
+onwaiting
+onwebkitanimationend
+onwebkitanimationiteration
+onwebkitanimationstart
+onwebkittransitionend
+onwheel

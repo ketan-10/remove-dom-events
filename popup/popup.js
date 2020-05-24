@@ -8,35 +8,21 @@
 
 // TODO : get from local -> disply -> if updated store in local
 
-const eventsUL = document.getElementsByClassName("events");
+const eventsUL = document.getElementById("eventsUL");
 
-let all_events = {
-  change: false,
-  click: false,
-  mouseover: false,
-  mouseout: false,
-  keydown: false,
-  load: false,
-  blur: false,
-  focus: false,
-  select: false,
-  submit: false,
-  reset: false,
-  keypress: false,
-  keyup: false,
-  mousedown: false,
-  mouseup: false,
-  mousemove: false,
-  dblclick: false,
-  error: false,
-  unload: false,
-  resize: false,
-};
+var text_inner = "";
+for (let i in all_events) {
+  text_inner +=
+    '<li><input type="checkbox" class="events" name="event" id="' +
+    i +
+    '" value="' +
+    i +
+    '"> ' +
+    i +
+    " </li>";
+}
+eventsUL.innerHTML = text_inner;
 
-// for debug (!dont forget to remove)
-// chrome.storage.local.set({ events_tobe_removed: all_events }, function () {
-//   console.log("Values are updated");
-// });
 
 function setStorage(events_values) {
   chrome.storage.local.set({ events_tobe_removed: events_values }, function () {
@@ -51,16 +37,20 @@ chrome.storage.local.get(["events_tobe_removed"], function (result) {
     disply_events(result["events_tobe_removed"]);
   }
 });
-for (const ele of eventsUL) {
+
+for (const ele of eventsUL.childNodes) {
+  console.log("adding click to ", ele);
   ele.addEventListener("click", () => {
-    all_events[ele.value] = ele.checked;
+    const inputElement = ele.childNodes[0];
+    all_events[inputElement.value] = inputElement.checked;
     setStorage(all_events);
   });
 }
 
 function disply_events(events) {
   all_events = events;
-  for (const ele of eventsUL) {
-    ele.checked = all_events[ele.value];
+  for (const ele of eventsUL.childNodes) {
+    const inputElement = ele.childNodes[0];
+    inputElement.checked = all_events[inputElement.value];
   }
 }
