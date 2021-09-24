@@ -1,8 +1,4 @@
-/**
- * Content.js runs on actual site
- * When all site is loaded content.js runs
- */
-// TODO : load local remove all events in local
+/**After running */
 
 function script(eve_names) {
   for (let i of eve_names.split(",")) {
@@ -24,13 +20,12 @@ chrome.storage.local.get(["events_tobe_removed"], function (result) {
   if (res == undefined) {
     console.log("You havent selected the events to cancel");
   } else {
-
     const replace = [];
     for (const k in res) {
       if (res[k]) {
         replace.push("on" + k);
 
-        // remove for simple events;
+        // remove for simple events
         window.addEventListener(
           k,
           function (event) {
@@ -40,19 +35,8 @@ chrome.storage.local.get(["events_tobe_removed"], function (result) {
         );
       }
     }
-
+    // window.onclick = () => {}
     inject(script, replace);
   }
 });
 
-/*
-scripted : 
-
-k = "click"
-const doc_event = getEventListeners(window)[k];
-  if (doc_event) {
-    for (var i = 0; i < doc_event.length; i++) {
-      window.removeEventListener(k, doc_event[i].listener);
-    }
-  }
-*/

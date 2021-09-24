@@ -1,12 +1,3 @@
-/**
- * This script is included in popup.js
- * This is runing in extention popup
- * You can check popup console by right clicking on popup
- *
- * THIS SCRIPT CAN ONLY MANUPLATE POPUP CONTENT
- */
-
-// TODO : get from local -> disply -> if updated store in local
 
 const eventsUL = document.getElementById("eventsUL");
 
@@ -34,7 +25,7 @@ chrome.storage.local.get(["events_tobe_removed"], function (result) {
   if (result["events_tobe_removed"] == undefined) {
     setStorage(all_events);
   } else {
-    disply_events(result["events_tobe_removed"]);
+    display_events(result["events_tobe_removed"]);
   }
 });
 
@@ -47,7 +38,7 @@ for (const ele of eventsUL.childNodes) {
   });
 }
 
-function disply_events(events) {
+function display_events(events) {
   all_events = events;
   for (const ele of eventsUL.childNodes) {
     const inputElement = ele.childNodes[0];
